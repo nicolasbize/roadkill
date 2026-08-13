@@ -13,7 +13,7 @@ extends Node2D
 
 const ATTACK_ACTIONS: Array[String] = ["punch", "kick"]
 const BACKDROP_HEIGHT := 32.0
-const BACKDROP_PARALLAX_SPEED := 2.0 # 512px width == 180deg rotation
+const BACKDROP_PARALLAX_SPEED := 1.0 # 512px width == 360deg rotation
 const COUNTDOWN_FRAMES := 4
 const COUNTDOWN_Y_POS := 16.0   # top of the countdown sprite, in screen pixels
 const DURATION_BLINK_PROGRESS := 400
