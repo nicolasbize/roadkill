@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://bbxyoasl4ej6p"]
+
+[ext_resource type="Script" uid="uid://c01sr12ihcgl6" path="res://scenes/ui/screens/credits_screen.gd" id="1_cwhfb"]
+[ext_resource type="Texture2D" uid="uid://dqpaoyr8wmnvt" path="res://assets/textures/ui/backgrounds/credits-background.png" id="1_s1clh"]
+[ext_resource type="FontFile" uid="uid://bd8eca2cibo" path="res://assets/fonts/my 3x5 tiny mono pixel font.ttf" id="2_cwhfb"]
+[ext_resource type="Texture2D" uid="uid://cuq0jdapev0wp" path="res://assets/textures/ui/panels/credits-frame.png" id="3_tr12m"]
+
+[sub_resource type="Animation" id="Animation_empfr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 66)]
+}
+
+[sub_resource type="Animation" id="Animation_60w8f"]
+resource_name = "scroll"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 66), Vector2(2, -105)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6k0r1"]
+_data = {
+&"RESET": SubResource("Animation_empfr"),
+&"scroll": SubResource("Animation_60w8f")
+}
+
+[node name="CreditsScreen" type="Control" unique_id=387045244]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_cwhfb")
+
+[node name="Background" type="TextureRect" parent="." unique_id=2105474116]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_s1clh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1584079303]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 66.0
+offset_right = 62.0
+offset_bottom = 219.0
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1957154109]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+text = "ROADKILL"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="VBoxContainer" unique_id=182275421]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=1396876348]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7607843, 0.7647059, 0.78039217, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+text = "MADE FOR
+LOWREZJAM 26"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="VBoxContainer" unique_id=1529746036]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=352149250]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.5294118, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+text = "PROGRAMMING
+MUSIC/SFX"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer" unique_id=280423186]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7607843, 0.7647059, 0.78039217, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+text = "GAD"
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="VBoxContainer" unique_id=1266351705]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer" unique_id=1507689723]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.5294118, 0.31764707, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+text = "ART/ANIMATION"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer" unique_id=1716464451]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7607843, 0.7647059, 0.78039217, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+text = "MOMONGA"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="VBoxContainer" unique_id=1063068486]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7607843, 0.7647059, 0.78039217, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="VBoxContainer" unique_id=1061029710]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9254902, 0.15294118, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+text = "YOU WON!!"
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="VBoxContainer" unique_id=1766354053]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7607843, 0.7647059, 0.78039217, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="VBoxContainer" unique_id=1210833664]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9254902, 0.15294118, 1)
+theme_override_fonts/font = ExtResource("2_cwhfb")
+theme_override_font_sizes/font_size = 6
+text = "THANKS
+FOR PLAYING!"
+horizontal_alignment = 1
+
+[node name="Frame" type="TextureRect" parent="." unique_id=475378919]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_tr12m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=421985108]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_6k0r1")
+autoplay = &"scroll"

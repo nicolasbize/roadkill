@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://dguakfgi47r1w"]
+
+[ext_resource type="Script" uid="uid://ciep1uxnxn2bx" path="res://scenes/world/world.gd" id="1_t5ptc"]
+[ext_resource type="Texture2D" uid="uid://s4cixuje8hrs" path="res://assets/textures/bikes/bike_red.png" id="3_j2gmx"]
+[ext_resource type="Texture2D" uid="uid://cr4qsat2svhn8" path="res://assets/textures/background/bg_sky.png" id="5_gb53w"]
+[ext_resource type="Texture2D" uid="uid://dcuco2jm26vnu" path="res://assets/textures/bikes/flash-texture.png" id="5_j2gmx"]
+[ext_resource type="Texture2D" uid="uid://dwwydyxjj3r7y" path="res://assets/textures/bikes/bike_green.png" id="5_t634p"]
+[ext_resource type="PackedScene" uid="uid://db8fmj8fiof4y" path="res://scenes/spark/spark.tscn" id="6_1yooq"]
+[ext_resource type="FontFile" uid="uid://bd8eca2cibo" path="res://assets/fonts/my 3x5 tiny mono pixel font.ttf" id="6_5qq27"]
+[ext_resource type="Texture2D" uid="uid://fad0weby1owl" path="res://assets/textures/bikes/bike_yellow.png" id="6_6hctx"]
+[ext_resource type="Texture2D" uid="uid://n80u40nhw1qh" path="res://assets/textures/bikes/bike_blue.png" id="6_rwifv"]
+[ext_resource type="Texture2D" uid="uid://blcruifab5l1b" path="res://assets/textures/vehicles/oncoming_car1.png" id="18_6hctx"]
+[ext_resource type="Texture2D" uid="uid://c7eg5bxtj6afg" path="res://assets/textures/vehicles/oncoming_car_2.png" id="19_ues17"]
+[ext_resource type="Texture2D" uid="uid://dxl0ghis0okpv" path="res://assets/textures/vehicles/oncoming_car_3.png" id="20_xq18t"]
+[ext_resource type="Texture2D" uid="uid://jbe3cl81nvjm" path="res://assets/textures/ui/panels/panel_position.png" id="22_ckok1"]
+[ext_resource type="Texture2D" uid="uid://cs0oagq1m06od" path="res://assets/textures/ui/panels/panel_speed.png" id="23_2x71e"]
+[ext_resource type="Texture2D" uid="uid://csvmbr0hy14vs" path="res://assets/textures/ui/race/countdown.png" id="23_ckok1"]
+[ext_resource type="Texture2D" uid="uid://cctq0bafbhf6u" path="res://assets/textures/vehicles/car1.png" id="24_7mx70"]
+[ext_resource type="Texture2D" uid="uid://dcjl61bxauxym" path="res://assets/textures/vehicles/car2.png" id="25_1cxds"]
+[ext_resource type="Texture2D" uid="uid://w10i5urhaskw" path="res://assets/textures/vehicles/car3.png" id="26_2m0ga"]
+[ext_resource type="Texture2D" uid="uid://dee8pi4jt8klt" path="res://assets/textures/bikes/bike_shadow.png" id="26_26xou"]
+[ext_resource type="Texture2D" uid="uid://ddd65a3m525tl" path="res://assets/textures/ui/race/warning.png" id="27_jyr8v"]
+[ext_resource type="Texture2D" uid="uid://c5xn05uyj5bgo" path="res://assets/textures/ui/race/race-red-tick.png" id="28_cmg7y"]
+[ext_resource type="AudioStream" uid="uid://drlxiat1hpx3v" path="res://assets/sounds/engine.wav" id="28_wnndm"]
+[ext_resource type="AudioStream" uid="uid://chb0dyx7qsaxl" path="res://assets/sounds/engine-zzz.wav" id="29_26xou"]
+[ext_resource type="Texture2D" uid="uid://cdj1ym0u3uu0" path="res://assets/textures/ui/race/speed-tick.png" id="34_lbnhc"]
+[ext_resource type="Texture2D" uid="uid://vifldeb87th7" path="res://assets/textures/ui/race/race-purple-tick.png" id="35_0wrxw"]
+[ext_resource type="Texture2D" uid="uid://dfkmu1r33lnla" path="res://assets/textures/ui/race/race-white-tick.png" id="36_cmg7y"]
+[ext_resource type="Texture2D" uid="uid://b315nqcwdeb4p" path="res://assets/textures/ui/race/race-green-tick.png" id="37_nqe8x"]
+
+[node name="World" type="Node2D" unique_id=1664848307]
+script = ExtResource("1_t5ptc")
+spark_scene = ExtResource("6_1yooq")
+countdown_texture = ExtResource("23_ckok1")
+enemy_textures = Array[Texture2D]([ExtResource("3_j2gmx"), ExtResource("5_t634p"), ExtResource("6_6hctx"), ExtResource("6_rwifv")])
+flash_texture = ExtResource("5_j2gmx")
+oncoming_car_textures = Array[Texture2D]([ExtResource("18_6hctx"), ExtResource("19_ues17"), ExtResource("20_xq18t")])
+same_way_car_textures = Array[Texture2D]([ExtResource("24_7mx70"), ExtResource("25_1cxds"), ExtResource("26_2m0ga")])
+shadow_texture = ExtResource("26_26xou")
+progress_race_tick = ExtResource("28_cmg7y")
+warning_texture = ExtResource("27_jyr8v")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=121135767]
+show_behind_parent = true
+visibility_layer = 97
+texture_repeat = 2
+texture = ExtResource("5_gb53w")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 32)
+
+[node name="SpeedLabel" type="Label" parent="." unique_id=2143119003]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 58.0
+offset_right = 13.0
+offset_bottom = 64.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("6_5qq27")
+theme_override_font_sizes/font_size = 6
+text = "120"
+horizontal_alignment = 2
+
+[node name="EngineSound" type="AudioStreamPlayer" parent="." unique_id=425510471]
+unique_name_in_owner = true
+stream = ExtResource("28_wnndm")
+volume_db = -12.0
+bus = &"Race"
+
+[node name="EngineZzzSound" type="AudioStreamPlayer" parent="." unique_id=283012358]
+unique_name_in_owner = true
+stream = ExtResource("29_26xou")
+volume_db = -10.0
+autoplay = true
+bus = &"Race"
+
+[node name="PositionFrame" type="Sprite2D" parent="." unique_id=1325070906]
+position = Vector2(0, 56)
+texture = ExtResource("22_ckok1")
+centered = false
+
+[node name="PositionLabel" type="Label" parent="PositionFrame" unique_id=112871122]
+unique_name_in_owner = true
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 17.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0.9254902, 0.15294118, 1)
+theme_override_fonts/font = ExtResource("6_5qq27")
+theme_override_font_sizes/font_size = 6
+text = "16th"
+
+[node name="SpeedIndicator" type="Sprite2D" parent="." unique_id=655934830]
+unique_name_in_owner = true
+position = Vector2(44, 56)
+texture = ExtResource("23_2x71e")
+centered = false
+
+[node name="SpeedScale" type="Sprite2D" parent="SpeedIndicator" unique_id=279375323]
+unique_name_in_owner = true
+texture_repeat = 2
+position = Vector2(5, 3)
+texture = ExtResource("34_lbnhc")
+centered = false
+
+[node name="SpeedScale2" type="Sprite2D" parent="SpeedIndicator" unique_id=1158787111]
+unique_name_in_owner = true
+texture_repeat = 2
+position = Vector2(8, 3)
+texture = ExtResource("34_lbnhc")
+centered = false
+
+[node name="SpeedScale3" type="Sprite2D" parent="SpeedIndicator" unique_id=1244790271]
+unique_name_in_owner = true
+texture_repeat = 2
+position = Vector2(11, 3)
+texture = ExtResource("34_lbnhc")
+centered = false
+
+[node name="SpeedScale4" type="Sprite2D" parent="SpeedIndicator" unique_id=50938901]
+unique_name_in_owner = true
+texture_repeat = 2
+position = Vector2(14, 3)
+texture = ExtResource("34_lbnhc")
+centered = false
+
+[node name="SpeedScale5" type="Sprite2D" parent="SpeedIndicator" unique_id=1953585215]
+unique_name_in_owner = true
+texture_repeat = 2
+position = Vector2(17, 3)
+texture = ExtResource("34_lbnhc")
+centered = false
+
+[node name="RaceProgressIndicator" type="HBoxContainer" parent="." unique_id=1352242080]
+unique_name_in_owner = true
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 66.0
+offset_bottom = 5.0
+theme_override_constants/separation = 3
+
+[node name="TextureRect" type="TextureRect" parent="RaceProgressIndicator" unique_id=1855948421]
+layout_mode = 2
+texture = ExtResource("35_0wrxw")
+
+[node name="TextureRect2" type="TextureRect" parent="RaceProgressIndicator" unique_id=964392457]
+layout_mode = 2
+texture = ExtResource("36_cmg7y")
+
+[node name="TextureRect3" type="TextureRect" parent="RaceProgressIndicator" unique_id=199324644]
+layout_mode = 2
+texture = ExtResource("36_cmg7y")
+
+[node name="TextureRect4" type="TextureRect" parent="RaceProgressIndicator" unique_id=1075652066]
+layout_mode = 2
+texture = ExtResource("36_cmg7y")
+
+[node name="TextureRect5" type="TextureRect" parent="RaceProgressIndicator" unique_id=1272586467]
+layout_mode = 2
+texture = ExtResource("36_cmg7y")
+
+[node name="TextureRect6" type="TextureRect" parent="RaceProgressIndicator" unique_id=1660877805]
+layout_mode = 2
+texture = ExtResource("36_cmg7y")
+
+[node name="TextureRect7" type="TextureRect" parent="RaceProgressIndicator" unique_id=2016917017]
+layout_mode = 2
+texture = ExtResource("36_cmg7y")
+
+[node name="TextureRect8" type="TextureRect" parent="RaceProgressIndicator" unique_id=860064647]
+layout_mode = 2
+texture = ExtResource("37_nqe8x")

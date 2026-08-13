@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="UsaTrack" format=3 uid="uid://b7sj3lh8hu5gs"]
+
+[ext_resource type="Texture2D" uid="uid://x1br6haaspre" path="res://assets/textures/background/backdrop-usa.png" id="1_uiwt2"]
+[ext_resource type="Texture2D" uid="uid://c1kje4p72ayg1" path="res://assets/textures/scenary/cactus1.png" id="2_3ea8r"]
+[ext_resource type="Texture2D" uid="uid://cgpniq330ve84" path="res://assets/textures/scenary/cactus2.png" id="3_gfqt1"]
+[ext_resource type="Texture2D" uid="uid://5id57h0swd8x" path="res://assets/textures/scenary/cactus3.png" id="4_df21j"]
+[ext_resource type="Texture2D" uid="uid://dh01di7wmge2i" path="res://assets/textures/scenary/cactus4.png" id="5_oh28h"]
+[ext_resource type="Texture2D" uid="uid://d0t5hc22bkyum" path="res://assets/textures/scenary/rock.png" id="6_1j4im"]
+[ext_resource type="Script" uid="uid://lnk3xd414qcd" path="res://scripts/track/scenery_run.gd" id="7_klpnj"]
+[ext_resource type="Script" uid="uid://n8extwmc53yb" path="res://scripts/maps/usa_track.gd" id="8_jfitm"]
+[ext_resource type="Texture2D" uid="uid://dssammtuxli8w" path="res://assets/textures/background/bg_sky_night.png" id="9_qip6g"]
+[ext_resource type="Resource" uid="uid://hxb62h7wryu8" path="res://resources/maps/usa_roads.tres" id="10_ape8s"]
+[ext_resource type="Texture2D" uid="uid://cm3n0tyahdsht" path="res://assets/textures/scenary/coconut_tree.png" id="11_moqh7"]
+
+[sub_resource type="Resource" id="Resource_7mx70"]
+script = ExtResource("7_klpnj")
+kinds = Array[String](["rock", "cactus1", "cactus2", "cactus3", "cactus4"])
+metadata/_custom_type_script = "uid://lnk3xd414qcd"
+
+[sub_resource type="Resource" id="Resource_1cxds"]
+script = ExtResource("7_klpnj")
+kinds = Array[String](["tree"])
+spacing = 14
+offset = 7.0
+jitter = 2.5
+metadata/_custom_type_script = "uid://lnk3xd414qcd"
+
+[resource]
+script = ExtResource("8_jfitm")
+display_name = "USA"
+theme = ExtResource("10_ape8s")
+sky_texture = ExtResource("9_qip6g")
+backdrop_texture = ExtResource("1_uiwt2")
+tree_texture = ExtResource("11_moqh7")
+rock_texture = ExtResource("6_1j4im")
+decorations = Dictionary[String, Texture2D]({
+"cactus1": ExtResource("2_3ea8r"),
+"cactus2": ExtResource("3_gfqt1"),
+"cactus3": ExtResource("4_df21j"),
+"cactus4": ExtResource("5_oh28h")
+})
+scenery = Array[ExtResource("7_klpnj")]([SubResource("Resource_7mx70"), SubResource("Resource_1cxds")])
+metadata/_custom_type_script = "uid://n8extwmc53yb"

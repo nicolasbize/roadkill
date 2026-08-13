@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BikeDefinition" format=3 uid="uid://ba18i3w7m4eoc"]
+
+[ext_resource type="Texture2D" uid="uid://cbxsosder1ox6" path="res://assets/textures/bikes/bike_ground_yellow.png" id="1_cedlx"]
+[ext_resource type="Script" uid="uid://0be8g0l2akia" path="res://scripts/data/bike_definition.gd" id="1_ease3"]
+[ext_resource type="Texture2D" uid="uid://fad0weby1owl" path="res://assets/textures/bikes/bike_yellow.png" id="2_wksbr"]
+
+[resource]
+script = ExtResource("1_ease3")
+display_name = "GSX 8R"
+texture = ExtResource("2_wksbr")
+ground_texture = ExtResource("1_cedlx")
+max_steer_angle = 0.2
+max_speed_kph = 170.0
+brake_decel = 15.0
+rolling_resistance = 1.7
+metadata/_custom_type_script = "uid://0be8g0l2akia"

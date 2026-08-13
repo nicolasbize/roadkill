@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://depc2tqkjq1cw"]
+
+[ext_resource type="Script" uid="uid://bnh1xyom1x0eb" path="res://scenes/ui/screens/logo_screen.gd" id="1_vrbh7"]
+[ext_resource type="Texture2D" uid="uid://ckv2hm2ptb3kx" path="res://assets/textures/ui/title/godot_logo.png" id="1_wpefa"]
+[ext_resource type="AudioStream" uid="uid://bn1dkb1mgnheb" path="res://assets/sounds/godot-logo.wav" id="3_30gfs"]
+
+[sub_resource type="Animation" id="Animation_vrbh7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wpefa"]
+resource_name = "appear"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.25, 0.3, 0.35, 0.4, 0.5, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vrbh7"]
+_data = {
+&"RESET": SubResource("Animation_vrbh7"),
+&"appear": SubResource("Animation_wpefa")
+}
+
+[node name="LogoScreen" type="Control" unique_id=1085132569]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrbh7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=605321092]
+texture = ExtResource("1_wpefa")
+centered = false
+hframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1407972643]
+root_node = NodePath("../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_vrbh7")
+autoplay = &"appear"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1593709515]
+stream = ExtResource("3_30gfs")
+autoplay = true

@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="JapanTrack" format=3 uid="uid://oxmjpkhcvoq7"]
+
+[ext_resource type="Texture2D" uid="uid://djgcd83g4883p" path="res://assets/textures/background/backdrop-japan.png" id="1_mrspg"]
+[ext_resource type="Script" uid="uid://lnk3xd414qcd" path="res://scripts/track/scenery_run.gd" id="1_yr2my"]
+[ext_resource type="Texture2D" uid="uid://chw0qdlyv4qgl" path="res://assets/textures/scenary/bush.png" id="2_4a3a4"]
+[ext_resource type="Script" uid="uid://dw5cpc31tyea3" path="res://scripts/maps/japan_track.gd" id="2_sg7i2"]
+[ext_resource type="Texture2D" uid="uid://dvqtuj7a3fwrv" path="res://assets/textures/scenary/bush-2.png" id="3_0l3me"]
+[ext_resource type="Texture2D" uid="uid://c5sgelber7ydh" path="res://assets/textures/scenary/bush-3.png" id="4_i2l11"]
+[ext_resource type="Texture2D" uid="uid://c2mdaqvkxwchc" path="res://assets/textures/scenary/rock_2.png" id="5_75hgf"]
+[ext_resource type="Texture2D" uid="uid://dssammtuxli8w" path="res://assets/textures/background/bg_sky_night.png" id="8_e6rp0"]
+[ext_resource type="Resource" uid="uid://simxabb42rw6" path="res://resources/maps/japan_roads.tres" id="9_h4t2s"]
+[ext_resource type="Texture2D" uid="uid://cuo88dw3vftrm" path="res://assets/textures/scenary/cherry_tree.png" id="10_dlinl"]
+
+[sub_resource type="Resource" id="Resource_2ao6m"]
+script = ExtResource("1_yr2my")
+kinds = Array[String](["rock", "bush", "bush-2", "bush-3"])
+metadata/_custom_type_script = "uid://lnk3xd414qcd"
+
+[sub_resource type="Resource" id="Resource_53m3p"]
+script = ExtResource("1_yr2my")
+kinds = Array[String](["tree"])
+offset = 6.0
+metadata/_custom_type_script = "uid://lnk3xd414qcd"
+
+[resource]
+script = ExtResource("2_sg7i2")
+display_name = "Japan"
+theme = ExtResource("9_h4t2s")
+sky_texture = ExtResource("8_e6rp0")
+backdrop_texture = ExtResource("1_mrspg")
+drives_on_left = true
+tree_texture = ExtResource("10_dlinl")
+rock_texture = ExtResource("5_75hgf")
+decorations = Dictionary[String, Texture2D]({
+"bush": ExtResource("2_4a3a4"),
+"bush-2": ExtResource("3_0l3me"),
+"bush-3": ExtResource("4_i2l11")
+})
+scenery = Array[ExtResource("1_yr2my")]([SubResource("Resource_2ao6m"), SubResource("Resource_53m3p")])
+metadata/_custom_type_script = "uid://dw5cpc31tyea3"

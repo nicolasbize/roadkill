@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RoadTheme" format=3 uid="uid://simxabb42rw6"]
+
+[ext_resource type="Script" uid="uid://bmuk22fulwy6m" path="res://scripts/renderers/road_theme.gd" id="1_0ru03"]
+
+[resource]
+script = ExtResource("1_0ru03")
+horizon_line = Color(0.11372549, 0.16862746, 0.3254902, 1)
+haze = Color(0.11372549, 0.16862746, 0.3254902, 1)
+dirt_light = Color(0.5137255, 0.4627451, 0.6117647, 1)
+dirt_dark = Color(0.11372549, 0.16862746, 0.3254902, 1)
+lane_line = Color(1, 0.6392157, 0, 1)
+metadata/_custom_type_script = "uid://bmuk22fulwy6m"

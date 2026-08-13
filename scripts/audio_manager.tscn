@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ch73sik182qw3"]
+
+[ext_resource type="AudioStream" uid="uid://rb0f3vgs4dv" path="res://assets/sounds/ui-select.wav" id="1_4c52k"]
+[ext_resource type="Script" uid="uid://de4oqtjwrh5d2" path="res://scripts/audio_manager.gd" id="1_vfv8a"]
+[ext_resource type="AudioStream" uid="uid://bnbgjpjepixqg" path="res://assets/sounds/ui-navigate.wav" id="2_vfv8a"]
+[ext_resource type="AudioStream" uid="uid://iq30mklbqajr" path="res://assets/sounds/321.wav" id="4_fnmo8"]
+[ext_resource type="AudioStream" uid="uid://dnv32a0vlfnto" path="res://assets/sounds/go.wav" id="5_hbfeh"]
+[ext_resource type="AudioStream" uid="uid://idfvy54ulvvl" path="res://assets/sounds/miss.wav" id="7_dsa06"]
+[ext_resource type="AudioStream" uid="uid://cgw02t2xqqvj5" path="res://assets/sounds/punch.wav" id="8_1rntm"]
+[ext_resource type="AudioStream" uid="uid://7qram0x2hyvh" path="res://assets/sounds/baton-thunk.wav" id="8_kg72q"]
+[ext_resource type="AudioStream" uid="uid://de5vuyts0qdte" path="res://assets/sounds/kick.wav" id="9_kg72q"]
+[ext_resource type="AudioStream" uid="uid://dpeaamfey6tm6" path="res://assets/sounds/crash.wav" id="10_1rntm"]
+[ext_resource type="AudioStream" uid="uid://bmuowvnay7gho" path="res://assets/sounds/brake.wav" id="11_kg72q"]
+
+[node name="AudioManager" type="Node" unique_id=1706631007]
+script = ExtResource("1_vfv8a")
+
+[node name="MenuSelect" type="AudioStreamPlayer" parent="." unique_id=1032657800]
+unique_name_in_owner = true
+stream = ExtResource("1_4c52k")
+
+[node name="MenuNavigate" type="AudioStreamPlayer" parent="." unique_id=1310609920]
+unique_name_in_owner = true
+stream = ExtResource("2_vfv8a")
+
+[node name="CountdownSound" type="AudioStreamPlayer" parent="." unique_id=225937359]
+unique_name_in_owner = true
+stream = ExtResource("4_fnmo8")
+volume_db = -5.0
+bus = &"Race"
+
+[node name="GoSound" type="AudioStreamPlayer" parent="." unique_id=1753731573]
+unique_name_in_owner = true
+stream = ExtResource("5_hbfeh")
+volume_db = -10.0
+bus = &"Race"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=30564694]
+unique_name_in_owner = true
+volume_db = 3.0
+
+[node name="MissSound" type="AudioStreamPlayer" parent="." unique_id=2069901387]
+unique_name_in_owner = true
+stream = ExtResource("7_dsa06")
+bus = &"Race"
+
+[node name="PunchSound" type="AudioStreamPlayer" parent="." unique_id=124749486]
+unique_name_in_owner = true
+stream = ExtResource("8_1rntm")
+bus = &"Race"
+
+[node name="WeaponSound" type="AudioStreamPlayer" parent="." unique_id=1286711997]
+unique_name_in_owner = true
+stream = ExtResource("8_kg72q")
+volume_db = -5.0
+bus = &"Race"
+
+[node name="KickSound" type="AudioStreamPlayer" parent="." unique_id=449559604]
+unique_name_in_owner = true
+stream = ExtResource("9_kg72q")
+bus = &"Race"
+
+[node name="CrashSound" type="AudioStreamPlayer" parent="." unique_id=104273151]
+unique_name_in_owner = true
+stream = ExtResource("10_1rntm")
+volume_db = -7.0
+bus = &"Race"
+
+[node name="BrakeSound" type="AudioStreamPlayer" parent="." unique_id=1079176197]
+unique_name_in_owner = true
+stream = ExtResource("11_kg72q")
+volume_db = -20.0
+bus = &"Race"

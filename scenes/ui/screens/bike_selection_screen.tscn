@@ -1,0 +1,220 @@
+[gd_scene format=3 uid="uid://c7ruirfjwk1pa"]
+
+[ext_resource type="Script" uid="uid://617rs723dvvv" path="res://scenes/ui/screens/bike_selection_screen.gd" id="1_l32h4"]
+[ext_resource type="Texture2D" uid="uid://bfhvanr70jaxr" path="res://assets/textures/ui/selector/moto-select-1.png" id="2_0oj0i"]
+[ext_resource type="Texture2D" uid="uid://cd0rip4vp3p1h" path="res://assets/textures/ui/selector/moto-select-2.png" id="3_of5ur"]
+[ext_resource type="Texture2D" uid="uid://bad7th12i6yb8" path="res://assets/textures/ui/selector/moto-select-3.png" id="4_n13sb"]
+[ext_resource type="Texture2D" uid="uid://cc51bno1rb4nl" path="res://assets/textures/ui/selector/moto-select-4.png" id="5_stk5j"]
+[ext_resource type="Texture2D" uid="uid://bgkgg5b4sxe16" path="res://assets/textures/ui/selector/moto-select-5.png" id="6_0oj0i"]
+[ext_resource type="Texture2D" uid="uid://oeuruhxkp2oy" path="res://assets/textures/ui/selector/background.png" id="6_7ara0"]
+[ext_resource type="Texture2D" uid="uid://4ufex5p4hw50" path="res://assets/textures/ui/selector/back-button.png" id="7_qdg0n"]
+[ext_resource type="Texture2D" uid="uid://ckiku1b8v0ug8" path="res://assets/textures/ui/selector/moto-select-1-locked.png" id="7_y7kqx"]
+[ext_resource type="Texture2D" uid="uid://ci2fdu51y3pmd" path="res://assets/textures/ui/selector/moto-select-2-locked.png" id="8_ddfte"]
+[ext_resource type="Texture2D" uid="uid://cv81xi15eocxe" path="res://assets/textures/ui/buttons/arrow_left.png" id="8_y7kqx"]
+[ext_resource type="Texture2D" uid="uid://dwtyb1qbkpr7d" path="res://assets/textures/ui/buttons/arrow_right.png" id="9_ddfte"]
+[ext_resource type="Texture2D" uid="uid://ci5707kcwp1q4" path="res://assets/textures/ui/selector/moto-select-3-locked.png" id="9_pu6l7"]
+[ext_resource type="Texture2D" uid="uid://b03wmkn2fa72l" path="res://assets/textures/ui/selector/moto-select-4-locked.png" id="10_oxb2n"]
+[ext_resource type="Texture2D" uid="uid://cstus6asouwuj" path="res://assets/textures/ui/selector/frame.png" id="10_pu6l7"]
+[ext_resource type="Texture2D" uid="uid://tx5hsjw31yrn" path="res://assets/textures/ui/selector/moto-select-5-locked.png" id="11_e3xas"]
+[ext_resource type="Texture2D" uid="uid://cngbkbnthof5l" path="res://assets/textures/ui/selector/lock-panel.png" id="17_y7kqx"]
+[ext_resource type="FontFile" uid="uid://bd8eca2cibo" path="res://assets/fonts/my 3x5 tiny mono pixel font.ttf" id="18_ddfte"]
+[ext_resource type="AudioStream" uid="uid://b0eebtlm1jpv3" path="res://assets/sounds/blingbling.wav" id="19_pu6l7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbyeo"]
+texture = ExtResource("7_qdg0n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2krn6"]
+texture = ExtResource("7_qdg0n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_epceh"]
+texture = ExtResource("7_qdg0n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_biq32"]
+texture = ExtResource("7_qdg0n")
+
+[sub_resource type="Animation" id="Animation_xv0c0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ButtonLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ButtonRight:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(55, 25)]
+}
+
+[sub_resource type="Animation" id="Animation_2ydox"]
+resource_name = "button-move"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ButtonLeft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 25), Vector2(1, 25)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ButtonRight:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(55, 25), Vector2(56, 25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8pseq"]
+_data = {
+&"RESET": SubResource("Animation_xv0c0"),
+&"button-move": SubResource("Animation_2ydox")
+}
+
+[node name="BikeSelectionScreen" type="Control" unique_id=1786150032]
+clip_children = 1
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l32h4")
+textures = Array[Texture2D]([ExtResource("2_0oj0i"), ExtResource("3_of5ur"), ExtResource("4_n13sb"), ExtResource("5_stk5j"), ExtResource("6_0oj0i")])
+locked_textures = Array[Texture2D]([ExtResource("7_y7kqx"), ExtResource("8_ddfte"), ExtResource("9_pu6l7"), ExtResource("10_oxb2n"), ExtResource("11_e3xas")])
+
+[node name="Background" type="TextureRect" parent="." unique_id=198006272]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_7ara0")
+
+[node name="BikeScroller" type="Control" parent="." unique_id=418693453]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -64.0
+offset_right = 128.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="LeftTexture" type="TextureRect" parent="BikeScroller" unique_id=1171679092]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="MidTexture" type="TextureRect" parent="BikeScroller" unique_id=1206261322]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="RightTexture" type="TextureRect" parent="BikeScroller" unique_id=1781307566]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+mouse_filter = 2
+
+[node name="ButtonLeft" type="Button" parent="." unique_id=1522122443]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 25.0
+offset_right = 9.0
+offset_bottom = 36.0
+theme_type_variation = &"FlatButton"
+theme_override_styles/normal = SubResource("StyleBoxTexture_cbyeo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2krn6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_epceh")
+theme_override_styles/focus = SubResource("StyleBoxTexture_biq32")
+icon = ExtResource("8_y7kqx")
+flat = true
+
+[node name="ButtonRight" type="Button" parent="." unique_id=54317187]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 55.0
+offset_top = 25.0
+offset_right = 62.0
+offset_bottom = 36.0
+theme_type_variation = &"FlatButton"
+theme_override_styles/normal = SubResource("StyleBoxTexture_cbyeo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2krn6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_epceh")
+theme_override_styles/focus = SubResource("StyleBoxTexture_biq32")
+icon = ExtResource("9_ddfte")
+flat = true
+
+[node name="Frame" type="TextureRect" parent="." unique_id=226887896]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_pu6l7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1141239667]
+libraries/ = SubResource("AnimationLibrary_8pseq")
+autoplay = &"button-move"
+
+[node name="LockFrame" type="TextureRect" parent="." unique_id=9753465]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 7.0
+offset_top = 34.0
+offset_right = 57.0
+offset_bottom = 56.0
+texture = ExtResource("17_y7kqx")
+
+[node name="UnlockLabel" type="Label" parent="LockFrame" unique_id=1937784376]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 47.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0.16078432, 0.6784314, 1, 1)
+theme_override_fonts/font = ExtResource("18_ddfte")
+theme_override_font_sizes/font_size = 6
+text = "FINISH USA 
+1ST PLACE"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=252422247]
+unique_name_in_owner = true
+stream = ExtResource("19_pu6l7")

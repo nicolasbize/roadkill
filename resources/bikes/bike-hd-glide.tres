@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BikeDefinition" format=3 uid="uid://d3pfehctwxaxu"]
+
+[ext_resource type="Texture2D" uid="uid://qxegxydn124o" path="res://assets/textures/bikes/bike_ground_cop.png" id="1_fys0s"]
+[ext_resource type="Script" uid="uid://0be8g0l2akia" path="res://scripts/data/bike_definition.gd" id="1_yyyg6"]
+[ext_resource type="Texture2D" uid="uid://bjbywruelci88" path="res://assets/textures/bikes/bike_cop.png" id="2_q0uyu"]
+[ext_resource type="Texture2D" uid="uid://db6roltofaegh" path="res://assets/textures/bikes/weapon.png" id="4_kdi1b"]
+
+[resource]
+script = ExtResource("1_yyyg6")
+display_name = "HD Glide"
+texture = ExtResource("2_q0uyu")
+ground_texture = ExtResource("1_fys0s")
+weapon_texture = ExtResource("4_kdi1b")
+weapon_punch_damage = 15
+max_steer_angle = 0.2
+max_speed_kph = 195.0
+engine_accel = 18.0
+brake_decel = 18.0
+rolling_resistance = 2.0
+metadata/_custom_type_script = "uid://0be8g0l2akia"

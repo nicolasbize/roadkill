@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://dumg17g72txyg"]
+
+[ext_resource type="Texture2D" uid="uid://dni2ftqa5clo2" path="res://assets/textures/background/results-background.png" id="1_72dol"]
+[ext_resource type="Script" uid="uid://dk1wn62b3ycg3" path="res://scenes/ui/screens/race_results_screen.gd" id="1_dmfcj"]
+[ext_resource type="FontFile" uid="uid://bd8eca2cibo" path="res://assets/fonts/my 3x5 tiny mono pixel font.ttf" id="3_yl4tq"]
+[ext_resource type="AudioStream" uid="uid://b0eebtlm1jpv3" path="res://assets/sounds/blingbling.wav" id="4_btl06"]
+
+[node name="RaceResultsScreen" type="Control" unique_id=1136744290]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dmfcj")
+
+[node name="Background" type="TextureRect" parent="." unique_id=414672055]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_72dol")
+
+[node name="PositionLabel" type="Label" parent="Background" unique_id=1416253467]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 17.0
+offset_right = 20.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("3_yl4tq")
+theme_override_font_sizes/font_size = 6
+text = "POS"
+
+[node name="PositionValue" type="Label" parent="Background" unique_id=1383776579]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 25.0
+offset_top = 17.0
+offset_right = 41.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 0.9254902, 0.15294118, 1)
+theme_override_fonts/font = ExtResource("3_yl4tq")
+theme_override_font_sizes/font_size = 6
+text = "1ST"
+
+[node name="PositionBest" type="Label" parent="Background" unique_id=286081599]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 45.0
+offset_top = 17.0
+offset_right = 61.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0.89411765, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("3_yl4tq")
+theme_override_font_sizes/font_size = 6
+text = "BEST"
+
+[node name="TimeLabel" type="Label" parent="Background" unique_id=60876362]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 25.0
+offset_right = 20.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("3_yl4tq")
+theme_override_font_sizes/font_size = 6
+text = "TIME"
+
+[node name="TimeValue" type="Label" parent="Background" unique_id=1682147631]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 41.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(1, 0.9254902, 0.15294118, 1)
+theme_override_fonts/font = ExtResource("3_yl4tq")
+theme_override_font_sizes/font_size = 6
+text = "1:32"
+
+[node name="TimeBest" type="Label" parent="Background" unique_id=508744588]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 45.0
+offset_top = 25.0
+offset_right = 61.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0.89411765, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("3_yl4tq")
+theme_override_font_sizes/font_size = 6
+text = "BEST"
+
+[node name="DemoLabel" type="Label" parent="Background" unique_id=1195731736]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 33.0
+offset_right = 20.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("3_yl4tq")
+theme_override_font_sizes/font_size = 6
+text = "ELIM"
+
+[node name="DemoValue" type="Label" parent="Background" unique_id=210683298]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 25.0
+offset_top = 33.0
+offset_right = 41.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(1, 0.9254902, 0.15294118, 1)
+theme_override_fonts/font = ExtResource("3_yl4tq")
+theme_override_font_sizes/font_size = 6
+text = "08"
+
+[node name="DemoBest" type="Label" parent="Background" unique_id=1724693529]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 45.0
+offset_top = 33.0
+offset_right = 61.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0, 0.89411765, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("3_yl4tq")
+theme_override_font_sizes/font_size = 6
+text = "BEST"
+
+[node name="UnlockPanel" type="ColorRect" parent="Background" unique_id=1447237917]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 41.0
+offset_right = 60.0
+offset_bottom = 60.0
+
+[node name="ColorRect2" type="ColorRect" parent="Background/UnlockPanel" unique_id=609782532]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 55.0
+offset_bottom = 18.0
+color = Color(0.11372549, 0.16862746, 0.3254902, 1)
+
+[node name="BikeUnlockedLabel" type="Label" parent="Background/UnlockPanel/ColorRect2" unique_id=214582582]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 53.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0, 0.89411765, 0.21176471, 1)
+theme_override_fonts/font = ExtResource("3_yl4tq")
+theme_override_font_sizes/font_size = 6
+text = "BIKE UNLOCKED"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=377153849]
+unique_name_in_owner = true
+stream = ExtResource("4_btl06")

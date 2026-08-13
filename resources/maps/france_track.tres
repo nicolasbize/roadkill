@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="FranceTrack" format=3 uid="uid://0yhqas6y5ed5"]
+
+[ext_resource type="Texture2D" uid="uid://ce01v2h1al2oe" path="res://assets/textures/background/backdrop-france.png" id="1_k6j4j"]
+[ext_resource type="Script" uid="uid://lnk3xd414qcd" path="res://scripts/track/scenery_run.gd" id="1_yq03m"]
+[ext_resource type="Script" uid="uid://ct05cacqlg3uo" path="res://scripts/maps/france_track.gd" id="2_2jvuy"]
+[ext_resource type="Texture2D" uid="uid://chw0qdlyv4qgl" path="res://assets/textures/scenary/bush.png" id="2_ebbkl"]
+[ext_resource type="Texture2D" uid="uid://c2mdaqvkxwchc" path="res://assets/textures/scenary/rock_2.png" id="3_k6j4j"]
+[ext_resource type="Texture2D" uid="uid://dvqtuj7a3fwrv" path="res://assets/textures/scenary/bush-2.png" id="3_ron1s"]
+[ext_resource type="Texture2D" uid="uid://c5sgelber7ydh" path="res://assets/textures/scenary/bush-3.png" id="4_pcsk5"]
+[ext_resource type="Texture2D" uid="uid://cr4qsat2svhn8" path="res://assets/textures/background/bg_sky.png" id="6_pcsk5"]
+[ext_resource type="Resource" uid="uid://b7yimbkpbt0q0" path="res://resources/maps/france_roads.tres" id="7_mm7vo"]
+[ext_resource type="Texture2D" uid="uid://dmnhwj6hymw7j" path="res://assets/textures/scenary/oak_tree.png" id="8_ebbkl"]
+
+[sub_resource type="Resource" id="Resource_5b3ce"]
+script = ExtResource("1_yq03m")
+kinds = Array[String](["bush", "rock", "bush-2", "bush-3"])
+metadata/_custom_type_script = "uid://lnk3xd414qcd"
+
+[sub_resource type="Resource" id="Resource_lbyys"]
+script = ExtResource("1_yq03m")
+kinds = Array[String](["tree"])
+spacing = 10
+metadata/_custom_type_script = "uid://lnk3xd414qcd"
+
+[resource]
+script = ExtResource("2_2jvuy")
+display_name = "France"
+theme = ExtResource("7_mm7vo")
+sky_texture = ExtResource("6_pcsk5")
+backdrop_texture = ExtResource("1_k6j4j")
+tree_texture = ExtResource("8_ebbkl")
+rock_texture = ExtResource("3_k6j4j")
+decorations = Dictionary[String, Texture2D]({
+"bush": ExtResource("2_ebbkl"),
+"bush-2": ExtResource("3_ron1s"),
+"bush-3": ExtResource("4_pcsk5")
+})
+scenery = Array[ExtResource("1_yq03m")]([SubResource("Resource_5b3ce"), SubResource("Resource_lbyys")])
+metadata/_custom_type_script = "uid://ct05cacqlg3uo"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BikeDefinition" format=3 uid="uid://eemlw8mv0rj0"]
+
+[ext_resource type="Script" uid="uid://0be8g0l2akia" path="res://scripts/data/bike_definition.gd" id="1_86f0i"]
+[ext_resource type="Texture2D" uid="uid://bkgkrcfk01qbn" path="res://assets/textures/bikes/bike_ground_green.png" id="1_nsef8"]
+[ext_resource type="Texture2D" uid="uid://dwwydyxjj3r7y" path="res://assets/textures/bikes/bike_green.png" id="2_yrp3m"]
+
+[resource]
+script = ExtResource("1_86f0i")
+display_name = "Ninja 650"
+texture = ExtResource("2_yrp3m")
+ground_texture = ExtResource("1_nsef8")
+max_steer_angle = 0.13
+max_speed_kph = 190.0
+engine_accel = 16.0
+brake_decel = 16.0
+rolling_resistance = 1.3
+metadata/_custom_type_script = "uid://0be8g0l2akia"

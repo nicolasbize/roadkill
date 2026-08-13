@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://c8820whdx5mcw"]
+
+[ext_resource type="Shader" uid="uid://45k04mun3i24" path="res://resources/shaders/dissolve.gdshader" id="1_jpjvg"]
+[ext_resource type="Script" uid="uid://cvp6frx5gj3og" path="res://scenes/ui/transition.gd" id="2_ghw5a"]
+[ext_resource type="Texture2D" uid="uid://mfchxngvb050" path="res://assets/textures/ui/backgrounds/red-background.png" id="2_jpjvg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_px6ob"]
+shader = ExtResource("1_jpjvg")
+shader_parameter/progress = 0.898000042655
+shader_parameter/reversed = false
+shader_parameter/diamondCount = Vector2(12, 12)
+
+[sub_resource type="Animation" id="Animation_px6ob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:material:shader_parameter/reversed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jpjvg"]
+resource_name = "transition_in"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:material:shader_parameter/reversed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ghw5a"]
+resource_name = "transition_out"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:material:shader_parameter/reversed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghw5a"]
+_data = {
+&"RESET": SubResource("Animation_px6ob"),
+&"transition_in": SubResource("Animation_jpjvg"),
+&"transition_out": SubResource("Animation_ghw5a")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_abqvh"]
+shader = ExtResource("1_jpjvg")
+shader_parameter/progress = 0.0
+shader_parameter/reversed = false
+shader_parameter/diamondCount = Vector2(12, 12)
+
+[node name="Transition" type="Control" unique_id=967489977]
+material = SubResource("ShaderMaterial_px6ob")
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("2_ghw5a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1255230456]
+libraries/ = SubResource("AnimationLibrary_ghw5a")
+autoplay = &"transition_in"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1183632508]
+material = SubResource("ShaderMaterial_abqvh")
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+texture = ExtResource("2_jpjvg")

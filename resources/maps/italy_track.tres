@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="ItalyTrack" format=3 uid="uid://bgilawqaqp73n"]
+
+[ext_resource type="Script" uid="uid://lnk3xd414qcd" path="res://scripts/track/scenery_run.gd" id="1_ei6e6"]
+[ext_resource type="Texture2D" uid="uid://b2ch0g2kue0ew" path="res://assets/textures/background/backdrop-italy.png" id="1_kfu6b"]
+[ext_resource type="Texture2D" uid="uid://dlgxrnuvoqu7j" path="res://assets/textures/scenary/bush-dry.png" id="2_0ush8"]
+[ext_resource type="Script" uid="uid://b8ofpdek8emwa" path="res://scripts/maps/italy_track.gd" id="2_gn15r"]
+[ext_resource type="Texture2D" uid="uid://c2mdaqvkxwchc" path="res://assets/textures/scenary/rock_2.png" id="3_kfu6b"]
+[ext_resource type="Texture2D" uid="uid://cr4qsat2svhn8" path="res://assets/textures/background/bg_sky.png" id="6_yu4do"]
+[ext_resource type="Resource" uid="uid://dg118pbwusxnu" path="res://resources/maps/italy_roads.tres" id="7_gltyf"]
+[ext_resource type="Texture2D" uid="uid://cpbul5iaimj6q" path="res://assets/textures/scenary/olive_tree.png" id="8_vp2da"]
+
+[sub_resource type="Resource" id="Resource_1p16t"]
+script = ExtResource("1_ei6e6")
+kinds = Array[String](["bush", "rock"])
+spacing = 10
+metadata/_custom_type_script = "uid://lnk3xd414qcd"
+
+[sub_resource type="Resource" id="Resource_86fdx"]
+script = ExtResource("1_ei6e6")
+kinds = Array[String](["tree"])
+spacing = 20
+metadata/_custom_type_script = "uid://lnk3xd414qcd"
+
+[resource]
+script = ExtResource("2_gn15r")
+display_name = "Italy"
+theme = ExtResource("7_gltyf")
+sky_texture = ExtResource("6_yu4do")
+backdrop_texture = ExtResource("1_kfu6b")
+tree_texture = ExtResource("8_vp2da")
+rock_texture = ExtResource("3_kfu6b")
+decorations = Dictionary[String, Texture2D]({
+"bush": ExtResource("2_0ush8")
+})
+scenery = Array[ExtResource("1_ei6e6")]([SubResource("Resource_1p16t"), SubResource("Resource_86fdx")])
+metadata/_custom_type_script = "uid://b8ofpdek8emwa"

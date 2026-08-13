@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cftcx80lgtd6r"]
+
+[ext_resource type="PackedScene" uid="uid://bx3l76akkaulj" path="res://scenes/ui/screens/title_screen.tscn" id="1_v5kre"]
+[ext_resource type="Script" uid="uid://bjvltpmd51wd2" path="res://scenes/ui/screens/main_menu_navigation.gd" id="1_vgjls"]
+[ext_resource type="PackedScene" uid="uid://c7ruirfjwk1pa" path="res://scenes/ui/screens/bike_selection_screen.tscn" id="2_vgjls"]
+[ext_resource type="PackedScene" uid="uid://wmq26jt0cu1o" path="res://scenes/ui/screens/map_selection_screen.tscn" id="4_nxoo3"]
+
+[node name="MainMenuNavigation" type="Control" unique_id=1669693267]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_vgjls")
+
+[node name="Scroller" type="Control" parent="." unique_id=889451571]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 64.0
+
+[node name="TitleScreen" parent="Scroller" unique_id=1827486092 instance=ExtResource("1_v5kre")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="SelectionScreen" parent="Scroller" unique_id=1786150032 instance=ExtResource("2_vgjls")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="MapSelectionScreen" parent="Scroller" unique_id=1996340478 instance=ExtResource("4_nxoo3")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 128.0
+offset_right = 192.0
+offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1

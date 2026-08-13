@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://rx7igejyfram"]
+
+[ext_resource type="Script" uid="uid://yl2w87n4r8ot" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://depc2tqkjq1cw" path="res://scenes/ui/screens/logo_screen.tscn" id="3_feb5d"]
+
+[node name="Game" type="Control" unique_id=644278355]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_e2o6t")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1440831252]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+color = Color(0, 0, 0, 1)
+
+[node name="LogoScreen" parent="." unique_id=1085132569 instance=ExtResource("3_feb5d")]
+layout_mode = 1

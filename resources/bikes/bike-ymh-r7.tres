@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="BikeDefinition" format=3 uid="uid://c14kudno4njux"]
+
+[ext_resource type="Script" uid="uid://0be8g0l2akia" path="res://scripts/data/bike_definition.gd" id="1_5kssf"]
+[ext_resource type="Texture2D" uid="uid://b8ai81j0otrs2" path="res://assets/textures/bikes/bike_ground_blue.png" id="1_v557y"]
+[ext_resource type="Texture2D" uid="uid://n80u40nhw1qh" path="res://assets/textures/bikes/bike_blue.png" id="2_cmoe7"]
+
+[resource]
+script = ExtResource("1_5kssf")
+display_name = "YMH-R7"
+texture = ExtResource("2_cmoe7")
+ground_texture = ExtResource("1_v557y")
+max_steer_angle = 0.18
+max_speed_kph = 185.0
+engine_accel = 16.0
+brake_decel = 16.0
+rolling_resistance = 1.7
+metadata/_custom_type_script = "uid://0be8g0l2akia"

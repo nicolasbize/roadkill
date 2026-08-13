@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BikeDefinition" format=3 uid="uid://d2trlw38hn41f"]
+
+[ext_resource type="Script" uid="uid://0be8g0l2akia" path="res://scripts/data/bike_definition.gd" id="1_aboo0"]
+[ext_resource type="Texture2D" uid="uid://d33plcui1n5uu" path="res://assets/textures/bikes/bike_ground.png" id="1_gc2r0"]
+[ext_resource type="Texture2D" uid="uid://s4cixuje8hrs" path="res://assets/textures/bikes/bike_red.png" id="2_obm0x"]
+
+[resource]
+script = ExtResource("1_aboo0")
+display_name = "XO Papio"
+texture = ExtResource("2_obm0x")
+ground_texture = ExtResource("1_gc2r0")
+max_speed_kph = 165.0
+metadata/_custom_type_script = "uid://0be8g0l2akia"

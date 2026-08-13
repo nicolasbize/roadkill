@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cr41l6bwrc7ho"]
+
+[ext_resource type="PackedScene" uid="uid://rx7igejyfram" path="res://game.tscn" id="1_bpifp"]
+[ext_resource type="Script" uid="uid://jha04x4f2j2k" path="res://mobile_game.gd" id="1_yyrvm"]
+
+[node name="MobileGame" type="Node2D" unique_id=1188714997]
+script = ExtResource("1_yyrvm")
+
+[node name="GameView" type="SubViewportContainer" parent="." unique_id=1316222969]
+offset_left = 32.0
+offset_right = 96.0
+offset_bottom = 64.0
+
+[node name="SubViewport" type="SubViewport" parent="GameView" unique_id=385250743]
+handle_input_locally = false
+size = Vector2i(64, 64)
+render_target_update_mode = 4
+
+[node name="Game" parent="GameView/SubViewport" unique_id=740657646 instance=ExtResource("1_bpifp")]
