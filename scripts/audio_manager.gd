@@ -19,6 +19,7 @@ extends Node
 const MUSICS := {
 	"menu": preload("res://assets/music/road-thrash-theme.mp3"),
 	"results": preload("res://assets/music/results.mp3"),
+	"credits": preload("res://assets/music/ending.mp3"),
 	"theme-usa": preload("res://assets/music/hit-that-banjo.mp3"),
 	"theme-france": preload("res://assets/music/fight-paris.mp3"),
 	"theme-japan": preload("res://assets/music/hit-that-banjo.mp3"),
@@ -39,6 +40,7 @@ func _ready() -> void:
 	GameEvents.prepare_for_race.connect(stop_music)
 	GameEvents.results_shown.connect(on_results_shown)
 	GameEvents.clubbed.connect(on_clubbed)
+	GameEvents.credits_roll.connect(on_credits_roll)
 	
 func on_menu_selected() -> void:
 	menu_select.play()
@@ -62,6 +64,11 @@ func on_race_started() -> void:
 func on_main_menu_started() -> void:
 	if music_player.stream != MUSICS["menu"]:
 		music_player.stream = MUSICS["menu"]
+		music_player.play()
+
+func on_credits_roll() -> void:
+	if music_player.stream != MUSICS["credits"]:
+		music_player.stream = MUSICS["credits"]
 		music_player.play()
 
 func on_results_shown() -> void:

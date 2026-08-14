@@ -15,6 +15,7 @@ func set_ready_to_play() -> void:
 func _process(_delta: float) -> void:
 	if not is_active:
 		return
+		
 	if is_ready_to_play and Input.is_action_just_pressed("punch"):
 		GameEvents.menu_selected.emit()
 		nav_forward.emit()

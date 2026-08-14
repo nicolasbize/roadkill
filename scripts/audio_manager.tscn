@@ -37,7 +37,8 @@ bus = &"Race"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=30564694]
 unique_name_in_owner = true
-volume_db = 3.0
+volume_db = 5.0
+autoplay = true
 
 [node name="MissSound" type="AudioStreamPlayer" parent="." unique_id=2069901387]
 unique_name_in_owner = true

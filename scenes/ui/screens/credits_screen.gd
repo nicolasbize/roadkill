@@ -1,12 +1,18 @@
 class_name CreditsScreen
 extends MenuScreen
 
-@onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var timer: Timer = $Timer
+@onready var credits_animation: AnimationPlayer = $CreditsAnimation
 
 var is_done := false
 
 func _ready() -> void:
-	animation_player.animation_finished.connect(on_animation_finished)
+	GameEvents.credits_roll.emit()
+	credits_animation.animation_finished.connect(on_animation_finished)
+	timer.timeout.connect(on_timeout)
+
+func on_timeout() -> void:
+	credits_animation.play("scroll")
 
 func on_animation_finished(_anim_name: String) -> void:
 	is_done = true

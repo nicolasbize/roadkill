@@ -41,6 +41,7 @@ const WARNING_Y_POS := 12.0
 @export_category("Textures")
 @export var countdown_texture: Texture2D                   # 4 frames: 3, 2, 1, GO
 @export var enemy_textures: Array[Texture2D]
+@export var finished_texture: Texture2D
 @export var flash_texture: Texture2D   # the enemy sheet, all in white
 @export var oncoming_car_textures: Array[Texture2D]
 @export var same_way_car_textures: Array[Texture2D]
@@ -223,6 +224,7 @@ func _draw() -> void:
 	wind.draw(self, camera, bike.speed, bike.get_boost_ratio())
 	draw_traffic_warning()
 	draw_countdown()
+	draw_finished_sign()
 
 func draw_countdown() -> void:
 	var frame := race.get_countdown_frame()
@@ -232,6 +234,10 @@ func draw_countdown() -> void:
 	var cell := Vector2(size.x / COUNTDOWN_FRAMES, size.y)
 	var left := roundf((RoadCamera.VIEWPORT_WIDTH - cell.x) / 2.0)
 	draw_texture_rect_region(countdown_texture, Rect2(left, COUNTDOWN_Y_POS, cell.x, cell.y), Rect2(frame * cell.x, 0.0, cell.x, cell.y))
+
+func draw_finished_sign() -> void:
+	if race.is_finished():
+		draw_texture_rect_region(finished_texture, Rect2(0, 0, 64, 64), Rect2(0, 0, 64, 64))
 
 func draw_backdrop() -> void:
 	var tex_width := float(backdrop_texture.get_width())

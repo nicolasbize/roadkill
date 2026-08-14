@@ -15,3 +15,4 @@ signal race_finished
 signal ready_for_results
 signal results_shown
 signal screeched
+signal credits_roll

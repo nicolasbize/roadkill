@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://bd8eca2cibo" path="res://assets/fonts/my 3x5 tiny mono pixel font.ttf" id="6_5qq27"]
 [ext_resource type="Texture2D" uid="uid://fad0weby1owl" path="res://assets/textures/bikes/bike_yellow.png" id="6_6hctx"]
 [ext_resource type="Texture2D" uid="uid://n80u40nhw1qh" path="res://assets/textures/bikes/bike_blue.png" id="6_rwifv"]
+[ext_resource type="Texture2D" uid="uid://hugxp7k3hh14" path="res://assets/textures/signs/finished_sign.png" id="8_2x71e"]
 [ext_resource type="Texture2D" uid="uid://blcruifab5l1b" path="res://assets/textures/vehicles/oncoming_car1.png" id="18_6hctx"]
 [ext_resource type="Texture2D" uid="uid://c7eg5bxtj6afg" path="res://assets/textures/vehicles/oncoming_car_2.png" id="19_ues17"]
 [ext_resource type="Texture2D" uid="uid://dxl0ghis0okpv" path="res://assets/textures/vehicles/oncoming_car_3.png" id="20_xq18t"]
@@ -33,6 +34,7 @@ script = ExtResource("1_t5ptc")
 spark_scene = ExtResource("6_1yooq")
 countdown_texture = ExtResource("23_ckok1")
 enemy_textures = Array[Texture2D]([ExtResource("3_j2gmx"), ExtResource("5_t634p"), ExtResource("6_6hctx"), ExtResource("6_rwifv")])
+finished_texture = ExtResource("8_2x71e")
 flash_texture = ExtResource("5_j2gmx")
 oncoming_car_textures = Array[Texture2D]([ExtResource("18_6hctx"), ExtResource("19_ues17"), ExtResource("20_xq18t")])
 same_way_car_textures = Array[Texture2D]([ExtResource("24_7mx70"), ExtResource("25_1cxds"), ExtResource("26_2m0ga")])
